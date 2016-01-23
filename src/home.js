@@ -23,15 +23,19 @@ var EnterButton = React.createClass({
 export var Home = React.createClass({
     render: function() {
         return (
-            <div>
+            <div className="entry">
                 <div className="title">
                     <h2>Hello into Chatto World!</h2>
                 </div>
                 <div className="form">
                     <form>
-                        <LoginComponent placeholder="Enter your chat name"/>
+                        <div className="inner-form">
+                            <LoginComponent placeholder="Enter your chat name"/>
+                        </div>
                         {/* use only username for authentication now */}
-                        <EnterButton />
+                        <div className="inner-form">
+                            <EnterButton />
+                        </div>
                     </form>
                 </div>
             </div>
