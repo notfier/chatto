@@ -44,6 +44,7 @@
     "express": "^4.13.3",
     "rimraf": "^2.5.0",
     "style-loader": "^0.13.0",
+    "stylus-loader": "^1.5.0",
     "webpack": "^1.12.11",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-dev-server": "^1.14.1",
