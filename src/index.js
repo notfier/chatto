@@ -1,3 +1,4 @@
+import './styles/fonts/ralewayThin.ttf';
 import './styles/styles.styl';
 
 import React from 'react';
