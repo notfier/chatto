@@ -15,7 +15,7 @@ var LoginComponent = React.createClass({
 var EnterButton = React.createClass({
     render: function() {
         return (
-            <input type="button" value="Enter world"></input>
+            <input id="enterWorld" type="button" value="Enter world"></input>
         )
     }
 });

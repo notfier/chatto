@@ -29,7 +29,7 @@ module.exports = {
         loader: 'style-loader!css-loader!stylus-loader'
       },
       {
-        test: /\.ttf$/,
+        test: /\.(ttf|otf)$/,
         loader: 'url-loader?importLoaders=1&limit=10000000',
         include: path.join( __dirname, 'src/styles/fonts' )
       }
