@@ -1,4 +1,6 @@
 import React from 'react';
+import { render } from 'react-dom';
+import { Link } from 'react-router';
 
 
 export var Home = React.createClass({
@@ -10,14 +12,12 @@ export var Home = React.createClass({
     },
 
     changeUsername( e ) {
-        console.log( 1 );
         this.setState( {
             usernameValue: e.target.value
         } );
     },
 
     handleChange() {
-        console.log( 2, this.state );
         localStorage.setItem( 'token', this.state.usernameValue );
     },
 
@@ -34,7 +34,9 @@ export var Home = React.createClass({
                         </div>
                         {/* use only username for authentication now */}
                         <div className="inner-form">
-                            <input id="enterWorld" type="button" value="Enter world" onClick={ this.handleChange }></input>
+                            <Link to="/dashboard">
+                                <input id="enterWorld" type="button" value="Enter world" onClick={ this.handleChange }></input>
+                            </Link>
                         </div>
                     </form>
                 </div>
