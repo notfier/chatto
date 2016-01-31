@@ -1,26 +1,26 @@
 import React from 'react';
 
 
-var LoginComponent = React.createClass({
-    propTypes: {
-        placeholder: React.PropTypes.string
-    },
-    render: function() {
-        return (
-            <input type='text' placeholder={ this.props.placeholder }></input>
-        );
-    }
-});
-
-var EnterButton = React.createClass({
-    render: function() {
-        return (
-            <input id="enterWorld" type="button" value="Enter world"></input>
-        )
-    }
-});
-
 export var Home = React.createClass({
+
+    getInitialState: function() {
+        return {
+            usernameValue: ''
+        };
+    },
+
+    changeUsername( e ) {
+        console.log( 1 );
+        this.setState( {
+            usernameValue: e.target.value
+        } );
+    },
+
+    handleChange() {
+        console.log( 2, this.state );
+        localStorage.setItem( 'token', this.state.usernameValue );
+    },
+
     render: function() {
         return (
             <div className="entry">
@@ -30,11 +30,11 @@ export var Home = React.createClass({
                 <div className="form">
                     <form>
                         <div className="inner-form">
-                            <LoginComponent placeholder="Enter your chat name"/>
+                            <input type='text' placeholder="Enter your chatname" onChange={ this.changeUsername } ></input>
                         </div>
                         {/* use only username for authentication now */}
                         <div className="inner-form">
-                            <EnterButton />
+                            <input id="enterWorld" type="button" value="Enter world" onClick={ this.handleChange }></input>
                         </div>
                     </form>
                 </div>
