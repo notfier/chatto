@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Link } from 'react-router';
 
 
 export var Dashboard = React.createClass({
@@ -10,6 +11,7 @@ export var Dashboard = React.createClass({
 
     logout: function() {
         localStorage.setItem( 'token', undefined );
+        window.location.assign( '/' );
     },
 
     render: function() {
@@ -17,6 +19,7 @@ export var Dashboard = React.createClass({
             return(
                 <div>
                     <p>You are logged in, notfier! Welcome!</p>
+                    <a href='#' onClick={ this.logout }>Logout</a>
                 </div>
             );
         } else {
