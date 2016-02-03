@@ -32,6 +32,11 @@ module.exports = {
         test: /\.(ttf|otf)$/,
         loader: 'url-loader?importLoaders=1&limit=10000000',
         include: path.join( __dirname, 'src/styles/fonts' )
+      },
+      {
+        test: /\.(png|jpg|jpeg)$/,
+        loader: 'url-loader?importLoaders=1&limit=8192',
+        include: path.join( __dirname, 'src/images' )
       }
     ]
   }
