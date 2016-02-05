@@ -1,30 +1,23 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
-const image = require( './images/potd-husky_3235255k.jpg' );
 
+import image from './static/images/potd-husky_3235255k.jpg';
+import menuSVG from './static/icons/ic_menu_black_24px.svg';
+import exitSVG from './static/icons/ic_exit_to_app_black_24px.svg';
+import NextIcon from 'material-design-icons/navigation/svg/production/ic_apps_18px.svg';
 
-var GeneralMessage = React.createClass({
-
-    render: function() {
-console.log( image, 1 )
-        return(
-            <div>
-                <p>Choose anyone from your friends</p>
-            </div>
-        );
-    }
-});
 
 var Users = React.createClass({
     render: function() {
+        console.log( NextIcon )
         return(
             <div className='users'>
                 <ul>
                     <li>
                         <a href='#'>
                             <div className='user-logo'>
-                                <img className='user-photo' src='/static/b992e86271055c68b988de45e8292c70.jpg'></img>
+                                <img className='user-photo' src={ image }></img>
                             </div>
                             <div className='user-name'>
                                 <span>user1</span>
@@ -66,9 +59,21 @@ export var Dashboard = React.createClass({
             return(
                 <div>
                     <div className='top-block'>
-                        <div className='greetings'>You are logged in, notfier! Welcome!</div>
-                        <div className='logout'>
-                            <a href='#' onClick={ this.logout }>Logout</a>
+                        <div className='over-logo'>
+                            <a href='javascript:void(0)'>
+                                <div className='logo'>
+                                        <img src={ NextIcon }/>
+                                        <h2>Chatto</h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div className='top-right-panel'>
+                            <div className='greetings'><p>You are logged in, notfier! Welcome!</p></div>
+                            <div className='logout'>
+                                <a href='#' onClick={ this.logout }>
+                                    <img className='svg-colour' src={ exitSVG }/>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div className='chat-block'>

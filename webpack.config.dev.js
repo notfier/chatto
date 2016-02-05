@@ -34,9 +34,12 @@ module.exports = {
         include: path.join( __dirname, 'src/styles/fonts' )
       },
       {
-        test: /\.(png|jpg|jpeg)$/,
+        test: /\.(png|jpg|jpeg|svg)$/,
         loader: 'url-loader?importLoaders=1&limit=8192',
-        include: path.join( __dirname, 'src/images' )
+        include: [
+          path.join( __dirname, 'src/static' ),
+          path.join(__dirname, 'node_modules/material-design-icons')
+        ]
       }
     ]
   }

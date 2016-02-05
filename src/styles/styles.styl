@@ -9,29 +9,66 @@
     font-family Amaranth-Regular
     src url( 'fonts/Amaranth-Regular.otf' )
 
+/* Vars */
+main-colour = #8080ff
+main-font-colour = #ebf0fa
+dark-hover-main-colour = #6666ff
+
 /* Styles */
+body img.svg-colour path
+    fill white;
 body
     background #fff
+    font-family 'Lora'
     // padding 5% 0
-    h1#logo
-        margin 5px
-        color green
-        width 100px
-        background-color #ccffff
-    div.top-block
-        background-color #ccffff
-        // width 90%
-        float right
-    div.greetings
-        margin-left 120px
-        margin-top -40px
-        float left
-        width 300px
-    div.logout
-        float right
-        margin-top -40px
-    div.chat-block
-        margin-top 10px
+    div.top-block /* top navigation panel */
+        background main-colour
+        display -webkit-flex
+        display flex
+        height 50px
+        width 100%
+        div.over-logo
+            width: 24%
+            a
+                text-decoration none
+                display block
+                div.logo
+                    display -webkit-flex
+                    display flex
+                    color main-font-colour
+                    width 19%
+                    height 50px
+                    line-height 100%
+                    img
+                        padding-left 15px
+                    h2
+                        margin 18px 0 0 0 !important
+                        padding-left 12px
+            & :hover
+                background dark-hover-main-colour
+        div.top-right-panel
+            width 100%
+            display -webkit-flex
+            display flex
+            justify-content space-between
+            -webkit-justify-content space-between
+            div.greetings
+                font-size 15px
+                line-height 100%
+                text-align left
+                width 300px
+            div.logout
+                text-align center
+                width 50px
+                height 52px
+                :before
+                    content ''
+                    height 55%
+                    display inline-block
+                a img
+                    vertical-align middle
+    div.chat-block /*  */
+        // margin-top 10px
 div.entry
     margin auto
     position relative
@@ -76,11 +113,13 @@ div.entry
 
 /* chat */
 div#root div.users
+    font-size 15px
     width 19%
     float left
-    border 1px solid #ccffff
+    // border 1px solid main-colour
     ul
         padding-left 0px
+        margin 0px
         li
             list-style-type none
             height 55px
