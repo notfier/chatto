@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
+
+import { Messages } from './components/Messages';
 
 import image from './static/images/potd-husky_3235255k.jpg';
 import menuSVG from './static/icons/ic_menu_black_24px.svg';
@@ -8,9 +10,9 @@ import exitSVG from './static/icons/ic_exit_to_app_black_24px.svg';
 import NextIcon from 'material-design-icons/navigation/svg/production/ic_apps_18px.svg';
 
 
-var Users = React.createClass({
-    render: function() {
-        console.log( NextIcon )
+class Users extends Component {
+
+    render() {
         return(
             <div className='users'>
                 <ul>
@@ -31,30 +33,26 @@ var Users = React.createClass({
             </div>
         )
     }
-});
 
-var Messages = React.createClass({
-    render: function() {
-        return(
-            <div className='messages'>
-                <div>Messages</div>
-            </div>
-        )
+};
+
+
+export class Dashboard extends Component {
+
+    constructor( props ) {
+        super( props );
     }
-})
 
-export var Dashboard = React.createClass({
-
-    componentWillMount: function() {
+    componentWillMount() {
         console.log('me here!')
-    },
+    }
 
-    logout: function() {
+    logout() {
         localStorage.setItem( 'token', undefined );
         window.location.assign( '/' );
-    },
+    }
 
-    render: function() {
+    render() {
         if ( localStorage.token == 'notfier' ) {
             return(
                 <div>
@@ -90,4 +88,4 @@ export var Dashboard = React.createClass({
             )
         }
     }
-});
+};

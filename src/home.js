@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router';
 
 
-export var Home = React.createClass({
+export class Home extends Component {
 
-    getInitialState: function() {
-        return {
-            usernameValue: ''
-        };
-    },
+    constructor( props ) {
+        super( props );
+        this.state = { usernameValue: '' };
+        this.changeUsername = this.changeUsername.bind( this );
+        this.handleChange = this.handleChange.bind( this );
+    }
 
     changeUsername( e ) {
-        this.setState( {
+        this.setState({
             usernameValue: e.target.value
-        } );
-    },
+        });
+    }
 
     handleChange() {
         localStorage.setItem( 'token', this.state.usernameValue );
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div className="entry">
                 <div className="title">
@@ -30,12 +31,21 @@ export var Home = React.createClass({
                 <div className="form">
                     <form>
                         <div className="inner-form">
-                            <input type='text' placeholder="Enter your chatname" onChange={ this.changeUsername } ></input>
+                            <input
+                                type='text'
+                                placeholder="Enter your chatname"
+                                onChange={ this.changeUsername }
+                            ></input>
                         </div>
                         {/* use only username for authentication now */}
                         <div className="inner-form">
                             <Link to="/dashboard">
-                                <input id="enterWorld" type="button" value="Enter world" onClick={ this.handleChange }></input>
+                                <input
+                                    id="enterWorld"
+                                    type="button"
+                                    value="Enter world"
+                                    onClick={ this.handleChange }
+                                ></input>
                             </Link>
                         </div>
                     </form>
@@ -43,4 +53,4 @@ export var Home = React.createClass({
             </div>
         )
     }
-});
+};

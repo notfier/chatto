@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 
 
-export class App extends Component {
+export class Messages extends Component {
 
     render() {
         return(
-            <div>
-                { this.props.children }
-            </div>
+            <div className='messages'><p>Messages</p></div>
         )
     }
 
