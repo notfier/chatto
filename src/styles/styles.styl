@@ -16,66 +16,6 @@ dark-hover-main-colour = #6666ff
 light-font = #f2f2f2
 
 /* Styles */
-body
-    background #fff
-    font-family 'Lora'
-    margin 0
-    // padding 5% 0
-    div.top-block /* top navigation panel */
-        background main-colour
-        display -webkit-flex
-        display flex
-        height 50px
-        width 100%
-        div.over-logo
-            width: 24%
-            a
-                text-decoration none
-                display block
-                div.logo
-                    display -webkit-flex
-                    display flex
-                    color main-font-colour
-                    width 19%
-                    height 50px
-                    line-height 100%
-                    img
-                        padding-left 15px
-                        padding-top 12px
-                        width 24px
-                        height 24px
-                    h2
-                        margin 18px 0 0 0 !important
-                        padding-left 12px
-            & :hover
-                background dark-hover-main-colour
-        div.top-right-panel
-            width 100%
-            display -webkit-flex
-            display flex
-            justify-content space-between
-            -webkit-justify-content space-between
-            div.greetings
-                color light-font
-                font-size 15px
-                line-height 130%
-                padding-left 5px
-                text-align left
-                width 300px
-            div.logout
-                text-align center
-                width 50px
-                height 52px
-                :before
-                    content ''
-                    height 55%
-                    display inline-block
-                a img
-                    vertical-align middle
-                    height 24px
-                    width 24px
-    div.chat-block /*  */
-        // margin-top 10px
 div.entry
     margin auto
     position relative
@@ -119,45 +59,134 @@ div.entry
                 transition-delay 0.01s
 
 /* chat */
-div#root div.users
-    font-size 15px
-    width 19%
-    float left
-    // border 1px solid main-colour
-    ul
-        padding-left 0px
-        margin 0px
-        li
-            list-style-type none
-            height 55px
-            a
-                color #001a14
-                & :before /* strange fix */
-                    content ""
-                    display inline-block
-                    vertical-align middle
+
+html
+    min-width 1000px
+body
+    background #ccc
+    font-family 'Lora'
+    margin 0
+    div.container
+        margin-bottom 5px
+        margin-left auto
+        margin-right auto
+        width 1000px
+        height 100%
+        overflow auto
+        background-color #ffffff
+        // padding 5% 0
+        div.top-block /* top navigation panel */
+            background main-colour
+            display -webkit-flex
+            display flex
+            height 50px
+            width 100%
+            div.over-logo
+                width: 24%
+                a
+                    text-decoration none
+                    display block
+                    div.logo
+                        display -webkit-flex
+                        display flex
+                        color main-font-colour
+                        width 19%
+                        height 50px
+                        line-height 100%
+                        img
+                            padding-left 15px
+                            padding-top 12px
+                            width 24px
+                            height 24px
+                        h2
+                            margin 15px 0 0 0 !important
+                            padding-left 12px
+                & :hover
+                    background dark-hover-main-colour
+            div.top-right-panel
+                width 100%
+                display -webkit-flex
+                display flex
+                justify-content space-between
+                -webkit-justify-content space-between
+                div.greetings
+                    color light-font
+                    font-size 15px
+                    line-height 130%
+                    padding-left 5px
+                    text-align left
+                    width 300px
+                div.logout
+                    text-align center
+                    width 50px
+                    height 52px
+                    :before
+                        content ''
+                        height 55%
+                        display inline-block
+                    a img
+                        vertical-align middle
+                        height 24px
+                        width 24px
+        div.chat-block /*  */
+            background #ffffff
+            width 1000px
+            height 100%
+            position relative
+            margin-bottom 2px
+            height 100%
+            div.users
+                font-size 15px
+                width 19%
+                float left
+                // border 1px solid main-colour
+                ul
+                    padding-left 0px
+                    margin 0px
+                    li
+                        list-style-type none
+                        height 55px
+                        a
+                            color #001a14
+                            & :before /* strange fix */
+                                content ""
+                                display inline-block
+                                vertical-align middle
+                                height 100%
+                            div
+                                display inline-block
+                                vertical-align middle
+                                height 100%
+                            div:last-child
+                                float right
+                                vertical-align top !important
+                            img.user-photo
+                                border-radius 50%
+                                padding-left 4px
+                                width 48px
+                                height auto
+                                vertical-align middle
+                            div.user-name span
+                                padding-left 10px
+                            div.user-time span
+                                font-size 10px
+                                padding-right 4px
+                    & :hover
+                        background-color #e5ffff
+                        cursor pointer
+            div.messages
+                height 500px
+                width 80%
+                float right
+                div#please-choose
+                    font-size 16px
+                    color #bfbfbf
                     height 100%
-                div
-                    display inline-block
+                    width 100%
                     vertical-align middle
-                    height 100%
-                div:last-child
-                    float right
-                    vertical-align top !important
-                img.user-photo
-                    border-radius 50%
-                    padding-left 4px
-                    width 48px
-                    height auto
-                    vertical-align middle
-                div.user-name span
-                    padding-left 10px
-                div.user-time span
-                    font-size 10px
-                    padding-right 4px
-        & :hover
-            background-color #e5ffff
-            cursor pointer
-div#root div.messages
-    width 80%
-    float right
+                    display table
+                    p
+                        text-align center
+                        vertical-align middle
+                        width 100%
+                        display table-cell

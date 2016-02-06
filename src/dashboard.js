@@ -55,7 +55,7 @@ export class Dashboard extends Component {
     render() {
         if ( localStorage.token == 'notfier' ) {
             return(
-                <div>
+                <div className='container'>
                     <div className='top-block'>
                         <div className='over-logo'>
                             <a href='javascript:void(0)'>
@@ -88,4 +88,5 @@ export class Dashboard extends Component {
             )
         }
     }
+
 };
