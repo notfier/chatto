@@ -5,9 +5,9 @@ import { Link } from 'react-router';
 import { Messages } from './components/Messages';
 
 import image from './static/images/potd-husky_3235255k.jpg';
-import menuSVG from './static/icons/ic_menu_black_24px.svg';
-import exitSVG from './static/icons/ic_exit_to_app_black_24px.svg';
-import NextIcon from 'material-design-icons/navigation/svg/production/ic_apps_18px.svg';
+import menuSVG from 'material-design-icons/navigation/1x_web/ic_menu_white_36dp.png';
+import exitSVG from 'material-design-icons/action/2x_web/ic_exit_to_app_white_36dp.png';
+import clearSVG from 'material-design-icons/content/1x_web/ic_clear_white_24dp.png';
 
 
 class Users extends Component {
@@ -60,7 +60,7 @@ export class Dashboard extends Component {
                         <div className='over-logo'>
                             <a href='javascript:void(0)'>
                                 <div className='logo'>
-                                        <img src={ NextIcon }/>
+                                        <img src={ menuSVG }/>
                                         <h2>Chatto</h2>
                                 </div>
                             </a>

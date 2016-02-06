@@ -13,13 +13,13 @@
 main-colour = #8080ff
 main-font-colour = #ebf0fa
 dark-hover-main-colour = #6666ff
+light-font = #f2f2f2
 
 /* Styles */
-body img.svg-colour path
-    fill white;
 body
     background #fff
     font-family 'Lora'
+    margin 0
     // padding 5% 0
     div.top-block /* top navigation panel */
         background main-colour
@@ -41,6 +41,9 @@ body
                     line-height 100%
                     img
                         padding-left 15px
+                        padding-top 12px
+                        width 24px
+                        height 24px
                     h2
                         margin 18px 0 0 0 !important
                         padding-left 12px
@@ -53,8 +56,10 @@ body
             justify-content space-between
             -webkit-justify-content space-between
             div.greetings
+                color light-font
                 font-size 15px
-                line-height 100%
+                line-height 130%
+                padding-left 5px
                 text-align left
                 width 300px
             div.logout
@@ -67,6 +72,8 @@ body
                     display inline-block
                 a img
                     vertical-align middle
+                    height 24px
+                    width 24px
     div.chat-block /*  */
         // margin-top 10px
 div.entry

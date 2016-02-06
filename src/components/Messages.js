@@ -6,7 +6,9 @@ export class Messages extends Component {
 
     render() {
         return(
-            <div className='messages'><p>Messages</p></div>
+            <div className='messages'>
+                
+            </div>
         )
     }
 
