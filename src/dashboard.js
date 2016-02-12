@@ -48,12 +48,13 @@ export class Dashboard extends Component {
     }
 
     logout() {
-        localStorage.setItem( 'token', undefined );
         window.location.assign( '/' );
+        localStorage.setItem( 'token', "{}" );
     }
 
     render() {
-        if ( localStorage.token == 'notfier' ) {
+        const loginData = JSON.parse( localStorage.token );
+        if ( loginData.username === 'notfier' ) {
             return(
                 <div className='container'>
                     <div className='top-block'>
